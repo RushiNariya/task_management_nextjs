@@ -121,26 +121,26 @@ function TaskList() {
   return (
     <>
       <div className="h-screen">
-        <div className="flex justify-between  p-4 my-4 items-center">
+        <div className="my-4 flex items-center justify-between p-4">
           <h1 className="text-2xl font-bold">Task List</h1>
           <button
             onClick={() => router.push("/tasks/new")}
-            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+            className="rounded bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-700"
           >
             Add Task
           </button>
         </div>
         {isTasksListLoading ? (
-          <div className="text-center h-[80%] flex justify-center items-center">
+          <div className="flex h-[80%] items-center justify-center text-center">
             <Loader />
           </div>
         ) : null}
         {!isTasksListLoading && tasksList ? (
-          <div className="w-full min-h-[90vh] p-4">
+          <div className="min-h-[90vh] w-full p-4">
             <div className="flex flex-col">
-              <div className=" overflow-x-auto">
-                <div className="min-w-full inline-block align-middle">
-                  <div className="overflow-hidden ">
+              <div className="overflow-x-auto">
+                <div className="inline-block min-w-full align-middle">
+                  <div className="overflow-hidden">
                     <Tasks
                       tasksList={tasksList || []}
                       deleteTaskHandler={deleteTaskHandler}
@@ -152,14 +152,14 @@ function TaskList() {
           </div>
         ) : null}
         {!isTasksListLoading && tasksListError ? (
-          <div className="text-red-400 w-full text-center">{tasksListError}</div>
+          <div className="w-full text-center text-red-400">{tasksListError}</div>
         ) : null}
         {!isTasksListLoading && !tasksListError && tasksList.length === 0 ? (
-          <div className="text-center flex justify-center items-center">no task</div>
+          <div className="flex items-center justify-center text-center">no task</div>
         ) : null}
 
         {tasksList?.length && !isTasksListLoading ? (
-          <div className="w-full col-span-12 flex justify-center md:justify-end">
+          <div className="col-span-12 flex w-full justify-center md:justify-end">
             <NewPagination
               pageIndex={currentPage}
               pageCount={totalPages}

@@ -23,7 +23,7 @@ function Button({
         onClick={onClick}
         className={
           (className =
-            "rounded border-0 bg-indigo-500 disabled:opacity-60 py-2 px-6 text-lg text-white hover:bg-indigo-600 focus:outline-none " +
+            "rounded border-0 bg-indigo-500 px-6 py-2 text-lg text-white hover:bg-indigo-600 focus:outline-none disabled:opacity-60 " +
             " " +
             className)
         }

@@ -9,7 +9,7 @@ export const authOptions: NextAuthOptions = {
       // @ts-expect-error - Types are incorrect
       async authorize(credentials: { email: string; password: string }) {
         try {
-          // as there is no login and register APIs are provided in the assignment, 
+          // as there is no login and register APIs are provided in the assignment,
           // I'm just setting up the auth configuration, and login component setup, please note.
           const { data, status } = await postLoginApi({
             email: credentials?.email,

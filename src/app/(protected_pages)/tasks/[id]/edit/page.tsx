@@ -80,7 +80,7 @@ function Page({ params }: PageProps) {
 
   if (loading) {
     return (
-      <div className="flex items-center justify-center h-screen">
+      <div className="flex h-screen items-center justify-center">
         <Loader loaderText="Fetching data..." />
       </div>
     );
@@ -89,7 +89,7 @@ function Page({ params }: PageProps) {
   return (
     <>
       <form onSubmit={formik.handleSubmit}>
-        <div className="max-w-xl mx-auto mt-16 flex w-full flex-col border rounded-lg bg-white p-8">
+        <div className="mx-auto mt-16 flex w-full max-w-xl flex-col rounded-lg border bg-white p-8">
           <h2 className="title-font mb-1 text-lg font-medium text-gray-900">Edit Task</h2>
           <p className="mb-5 leading-relaxed text-gray-600">
             Enter title and todo status, you can edit the task later to mark it as
@@ -111,13 +111,13 @@ function Page({ params }: PageProps) {
           </div>
 
           <div className="mb-4">
-            <label htmlFor="status" className="block text-gray-700 font-medium mb-2">
+            <label htmlFor="status" className="mb-2 block font-medium text-gray-700">
               Completed
             </label>
             <select
               id="status"
               name="status"
-              className="w-full rounded border border-gray-300 bg-white py-3 px-3 text-base leading-8 text-gray-700 outline-none transition-colors duration-200 ease-in-out focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200"
+              className="w-full rounded border border-gray-300 bg-white px-3 py-3 text-base leading-8 text-gray-700 outline-none transition-colors duration-200 ease-in-out focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200"
               onChange={formik.handleChange}
               value={formik.values.status}
               onBlur={formik.handleBlur}
@@ -128,7 +128,7 @@ function Page({ params }: PageProps) {
             </select>
 
             {formik.touched.status && formik.errors.status ? (
-              <div className="text-red-400 text-sm">{formik.errors.status}</div>
+              <div className="text-sm text-red-400">{formik.errors.status}</div>
             ) : null}
           </div>
 

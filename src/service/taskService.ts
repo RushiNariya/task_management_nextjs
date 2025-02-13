@@ -19,7 +19,6 @@ export const AddTodoApi = (body: any) => {
   return axiosInstance.post(`/todos/add`, body);
 };
 
-
 export const updateTodoApi = (body: any, id: number) => {
   return axiosInstance.put(`/todos/${id}`, body);
 };

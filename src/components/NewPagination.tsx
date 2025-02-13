@@ -73,7 +73,7 @@ const NewPagination = ({
             }}
             className={` ${
               pageIndex === 1 ? "" : "!text-eventYellow-100"
-            } relative mr-2 cursor-pointer inline-flex items-center rounded-full px-1 py-1 md:px-2 md:py-2 text-darkText-100 focus:z-20 focus:outline-offset-0`}
+            } text-darkText-100 relative mr-2 inline-flex cursor-pointer items-center rounded-full px-1 py-1 focus:z-20 focus:outline-offset-0 md:px-2 md:py-2`}
           >
             <ArrowLeftIcon />
           </div>
@@ -84,7 +84,7 @@ const NewPagination = ({
                 <div
                   key={page}
                   onClick={() => previousPage()}
-                  className="relative cursor-pointer mx-1 inline-flex items-center rounded-full md:px-2 md:py-2 px-1 py-1 !text-black bg-zinc-400 focus:z-20 focus:outline-offset-0"
+                  className="relative mx-1 inline-flex cursor-pointer items-center rounded-full bg-zinc-400 px-1 py-1 !text-black focus:z-20 focus:outline-offset-0 md:px-2 md:py-2"
                 >
                   <span className="sr-only">Previous</span>
                   <svg
@@ -106,7 +106,7 @@ const NewPagination = ({
                 <div
                   key={page}
                   onClick={() => nextPage()}
-                  className="relative cursor-pointer mx-1 inline-flex items-center rounded-full md:px-2 md:py-2 px-1 py-1 !text-black bg-zinc-400 focus:z-20 focus:outline-offset-0"
+                  className="relative mx-1 inline-flex cursor-pointer items-center rounded-full bg-zinc-400 px-1 py-1 !text-black focus:z-20 focus:outline-offset-0 md:px-2 md:py-2"
                 >
                   <span className="sr-only">Next</span>
                   <svg
@@ -130,14 +130,12 @@ const NewPagination = ({
                   key={page}
                   className={
                     page === pageIndex
-                      ? "relative cursor-pointer mx-1 rounded-full z-10 inline-flex items-center bg-gradient-to-b from-slate-200 to-slate-300 md:px-2 md:py-2 px-1 py-1 text-sm font-semibold text-black focus:z-20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-                      : "relative cursor-pointer mx-1 rounded-full inline-flex items-center md:px-2 md:py-2 px-1 py-1 text-sm font-semibold text-black bg-slate-100 focus:z-20 focus:outline-offset-0"
+                      ? "relative z-10 mx-1 inline-flex cursor-pointer items-center rounded-full bg-gradient-to-b from-slate-200 to-slate-300 px-1 py-1 text-sm font-semibold text-black focus:z-20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 md:px-2 md:py-2"
+                      : "relative mx-1 inline-flex cursor-pointer items-center rounded-full bg-slate-100 px-1 py-1 text-sm font-semibold text-black focus:z-20 focus:outline-offset-0 md:px-2 md:py-2"
                   }
                   onClick={() => gotoPage(page)}
                 >
-                  <span className="flex items-center justify-center w-5 h-5 ">
-                    {page}
-                  </span>
+                  <span className="flex h-5 w-5 items-center justify-center">{page}</span>
                 </div>
               );
             }
@@ -150,7 +148,7 @@ const NewPagination = ({
               }
               gotoPage(pageCount);
             }}
-            className={`relative ml-2 cursor-pointer inline-flex items-center rounded-full md:px-2 md:py-2 px-1 py-1 text-darkText-100 focus:z-20 focus:outline-offset-0`}
+            className={`text-darkText-100 relative ml-2 inline-flex cursor-pointer items-center rounded-full px-1 py-1 focus:z-20 focus:outline-offset-0 md:px-2 md:py-2`}
           >
             <ArrowRightIcon />
           </div>
